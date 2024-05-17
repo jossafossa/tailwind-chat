@@ -65,6 +65,7 @@ api.on("stopTyping", () => {
       <div
         class="flex h-12 w-full items-center overflow-hidden rounded-full bg-white text-black ring-white/30 focus-within:ring-4"
       >
+        henk
         <input
           class="[readonly]:cursor-not-allowed h-full flex-1 px-5 focus:outline-none"
           v-model="currentMessage"
