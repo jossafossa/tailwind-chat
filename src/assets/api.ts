@@ -83,7 +83,7 @@ class API extends EventHandler {
         isTyping = !isTyping;
         if (isTyping) this.emit("stopTyping");
         if (!isTyping) this.emit("startTyping");
-      }, 500);
+      }, 1000);
 
       await this.wait(3000);
       clearInterval(typingInterval);

@@ -10,7 +10,7 @@
 
 <style lang="scss" scoped>
 .loader {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 0.15em;

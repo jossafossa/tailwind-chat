@@ -26,6 +26,7 @@ api.on("startSend", () => {
 
 api.on("stopSend", ({ message }: { message: string }) => {
   isSending.value = false;
+  currentMessage.value = "";
   messages.value.push(message);
 });
 
@@ -65,8 +66,10 @@ api.on("stopTyping", () => {
         class="flex h-12 w-full items-center overflow-hidden rounded-full bg-white text-black ring-white/30 focus-within:ring-4"
       >
         <input
-          class="h-full flex-1 px-5 focus:outline-none"
+          class="[readonly]:cursor-not-allowed h-full flex-1 px-5 focus:outline-none"
           v-model="currentMessage"
+          :class="{ 'text-slate-400': isSending }"
+          :readonly="isSending"
           type="text"
           placeholder="Type a message..."
           @keydown.enter="api.send(currentMessage)"
